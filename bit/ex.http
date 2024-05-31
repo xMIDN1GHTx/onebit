@@ -1,0 +1,19 @@
+### Создание заказа с прикрепленными файлами
+
+POST http://localhost:8000/orders/
+Content-Type: multipart/form-data
+
+Content-Disposition: form-data; name="title"
+
+Пример заказа
+Content-Disposition: form-data; name="description"
+
+Пример заказа
+Content-Disposition: form-data; name="attached_files"; filename="file1.txt"
+Content-Type: text/plain
+
+< ./path/to/dir/file1.txt
+Content-Disposition: form-data; name="attached_files"; filename="file2.txt"
+Content-Type: text/plain
+
+< ./path/to/dir/file2.txt
